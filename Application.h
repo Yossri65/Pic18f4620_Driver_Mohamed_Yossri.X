@@ -30,6 +30,7 @@
 
 /* ------------------------------------Data Type Declarations----------------------- */
 extern Ch_LCD lcd1;
+extern Key_Pad_t key_pad1;
 /* ------------------------------------Software Interface Declarations-------------- */
 
 
