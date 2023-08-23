@@ -1,8 +1,8 @@
 /* 
- * File:   hal_i2c.h
- * Author: Ahmed Abd El-Ghafar
- * https://www.linkedin.com/in/ahmedabdelghafarmohammed/
- * Created on May 21, 2021, 9:53 PM
+ * File:   hal_i2c.c
+ * Author: Yossri
+ *
+ * Created on August 19, 2023, 7:30 PM
  */
 
 #ifndef HAL_I2C_H
