@@ -1,0 +1,24 @@
+Timer2_conf_t timer2 =
+{
+  .TIMER2_IntterruptHandeler = timer2_isr ,
+  .TIMER2_PRE_LOAD_VALUE = 0 ,
+  .Postscaler_Select = TIMER2_POSTSCALER_DIV_BY_1 ,
+  .Prescaler_Select = TIMER2_PRESCALER_DIV_BY_1
+};
+
+ECCP_CONFIG_t Eccp_pwm =
+{
+  .ECCP_IntterruptHandeler=NULL,
+  .ECCP_PWM_SET_MODE = PWM_mode_P1A_P1C_active_high_P1B_P1D_active_high,
+  .PWM_Pins_Mode =PWM_Half_Birdge_Forward_P1A_P1B__Modulated_P1A_Active,
+  .eccp_pinA.port =PortC_Index,
+  .eccp_pinA.pin = pin2,
+  .eccp_pinA.direction =Direction_Outpt,
+  .eccp_pinB.port =PortD_Index,
+  .eccp_pinB.pin = pin5,
+  .eccp_pinB.direction =Direction_Outpt,
+  .delay = 50000000,
+  .PWM_Frequncy = 20000,
+  .Prescaler_Select = CCP_TIMER2_PRESCALER_DIV_BY_1,
+  .Postscaler_Select = CCP_TIMER2_POSTSCALER_DIV_BY_1
+};

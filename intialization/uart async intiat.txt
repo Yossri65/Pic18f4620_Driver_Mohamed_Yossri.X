@@ -1,0 +1,99 @@
+/* 
+ * File:   Application.c
+ * Author: Yossri
+ *
+ * Created on July 7, 2023, 8:09 PM
+ */ 
+#include <builtins.h>
+
+#include "Application.h"
+Std_ReturnType ret = E_NOT_OK;
+
+Led_t led2 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin1 ,
+  .Led_Status = LED_OFF
+};
+Led_t led1 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin0 ,
+  .Led_Status = LED_OFF
+};
+volatile uint32 count_TX = 0;
+volatile uint32 count_RX = 0;
+uint8 read_rx;
+void Tx_isr(void)
+{
+    count_TX++;
+}
+void Rx_isr(void)
+{
+    count_RX++;
+    ret = EUSART_ASYNC_ReadByteNoBlocking(&read_rx);
+    switch(read_rx)
+    {
+        case 'a':
+           ret= Led_Turn_On(&led1);
+           ret = EUSART_ASYNC_WriteStringBlocking("led1 turn on\r" ,13);
+           break;
+        case 'b':
+           ret= Led_Turn_On(&led2);
+           ret = EUSART_ASYNC_WriteStringBlocking("led2 turn on\r" ,13);
+           break;
+        case 'c':
+           ret= Led_Turn_Off(&led1);
+           ret = EUSART_ASYNC_WriteStringBlocking("led1 turn off\r" ,14);
+           break;
+        case 'd':
+           ret= Led_Turn_Off(&led2);
+           ret = EUSART_ASYNC_WriteStringBlocking("led2 turn off\r" ,14);
+           break;
+        default: 
+            ret= Led_Turn_Off(&led1);
+            ret= Led_Turn_Off(&led2);
+    }
+}
+
+USART_CONFIG_t _usart_ =
+{
+  .baudrate = 9600,
+  .buad_rate_gen = BAUDRATE_ASYN_16BIT_lOW_SPEED,
+  
+  .sync_async_mode = EUART_ASYNCHRONOUS_MODE ,
+  .UART_TX_Enable.TX_Enable = EUSART_ASYNCHRONOUS_TX_ENABLE ,
+  .UART_TX_Enable.TX_9Bit_Enable = EUART_ASYNCHRONOUS_TX_9BIT_DISABLE,
+  .UART_TX_Enable.TX_Interrupt_Enable = EUSART_ASYNCHRONOUS_TX_INTERRUPT_ENABLE,
+  
+  .UART_RX_Enable.RX_Enable= EUSART_ASYNCHRONOUS_RX_ENABLE,
+  .UART_RX_Enable.RX_9Bit_Enable = EUART_ASYNCHRONOUS_RX_9BIT_DISABLE,
+  .UART_RX_Enable.RX_Interrupt_Enable = EUSART_ASYNCHRONOUS_RX_INTERRUPT_ENABLE,
+  .EUSART_FRAMINGERRORDefaultHandler = NULL,
+  .EUSART_OVERRUNERRORDefaultHandler =NULL,
+  .EUSART_RXDefaultInterruptHandler =Rx_isr,
+  .EUSART_TxDefaultInterruptHandler =Tx_isr
+};
+
+void intialization (void);
+
+
+int main(void) {
+    intialization();
+    ret = USART_ASYNC_Intialization(&_usart_);
+    //ret = EUSART_ASYNC_WriteStringBlocking("mohamed\r" ,8);
+    ret = EUSART_ASYNC_WriteByteBlocking('a');
+    ret = EUSART_ASYNC_WriteByteBlocking('a');
+    while(1)
+    {
+        
+    }
+    return (EXIT_SUCCESS);
+}
+
+void intialization (void)
+{
+    ecu_intialize( );
+    ret = Led_Intialize(&led1);
+    ret = Led_Intialize(&led2);
+}

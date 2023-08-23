@@ -1,0 +1,118 @@
+
+Led_t led1 =
+{
+  .Port_Name = PortA_Index,
+  .Pin_Name = pin0 ,
+  .Led_Status = LED_ON
+};
+
+        
+button_config_t btn1 =
+{
+    .button_pin.port = PortC_Index ,
+    .button_pin.pin = pin0 ,
+    .button_pin.direction = Direction_input ,
+    .button_pin.logic = Logic_Low ,
+    .button_connection = BUTTON_ACTIVE_HIGH ,
+    .button_status = BUTTON_RELEASED
+};
+
+
+Relay_t relay =
+{
+    .port_name = PortD_Index ,
+    .pin_name = pin2 ,
+    .relay_status = RELAY_ON
+};
+
+
+Dc_Motor_t dc_motor1 =
+{
+  .pin[0].port = PortD_Index ,
+  .pin[0].pin = pin0 ,
+  .pin[0].logic = MOTOR_OFF ,
+  .pin[0].direction = Direction_Outpt ,
+  .pin[1].port = PortD_Index ,
+  .pin[1].pin = pin1 ,
+  .pin[1].logic = MOTOR_OFF ,
+  .pin[1].direction = Direction_Outpt ,
+  
+};
+
+
+Key_Pad_t key_pad1 =
+{
+  .Key_Pad_Rows[0].port = PortC_Index ,
+  .Key_Pad_Rows[0].pin = pin0 ,
+  .Key_Pad_Rows[0].logic = Logic_Low ,
+  .Key_Pad_Rows[0].direction = Direction_Outpt ,
+  
+    .Key_Pad_Rows[1].port = PortC_Index ,
+  .Key_Pad_Rows[1].pin = pin1 ,
+  .Key_Pad_Rows[1].logic = Logic_Low ,
+  .Key_Pad_Rows[1].direction = Direction_Outpt ,
+  
+    .Key_Pad_Rows[2].port = PortC_Index ,
+  .Key_Pad_Rows[2].pin = pin2 ,
+  .Key_Pad_Rows[2].logic = Logic_Low ,
+  .Key_Pad_Rows[2].direction = Direction_Outpt ,
+  
+    .Key_Pad_Rows[3].port = PortC_Index ,
+  .Key_Pad_Rows[3].pin = pin3 ,
+  .Key_Pad_Rows[3].logic = Logic_Low ,
+  .Key_Pad_Rows[3].direction = Direction_Outpt ,
+
+    .Key_Pad_Coulmns[0].port = PortC_Index ,
+  .Key_Pad_Coulmns[0].pin = pin4 ,
+  .Key_Pad_Coulmns[0].logic = Logic_Low ,
+  .Key_Pad_Coulmns[0].direction = Direction_input ,
+  
+    .Key_Pad_Coulmns[1].port = PortC_Index ,
+  .Key_Pad_Coulmns[1].pin = pin5 ,
+  .Key_Pad_Coulmns[1].logic = Logic_Low ,
+  .Key_Pad_Coulmns[1].direction = Direction_input ,
+  
+    .Key_Pad_Coulmns[2].port = PortC_Index ,
+  .Key_Pad_Coulmns[2].pin = pin6 ,
+  .Key_Pad_Coulmns[2].logic = Logic_Low ,
+  .Key_Pad_Coulmns[2].direction = Direction_input ,
+  
+    .Key_Pad_Coulmns[3].port = PortC_Index ,
+  .Key_Pad_Coulmns[3].pin = pin7 ,
+  .Key_Pad_Coulmns[3].logic = Logic_Low ,
+  .Key_Pad_Coulmns[3].direction = Direction_input ,
+};
+
+Ch_LCD lcd1 =
+{
+  .RS.port =PortC_Index ,
+  .RS.pin = pin0,
+  .RS.logic =Logic_Low ,
+  .RS.direction = Direction_Outpt ,
+  .EN.port =PortC_Index ,
+  .EN.pin = pin1,
+  .EN.logic =Logic_Low ,
+  .EN.direction = Direction_Outpt ,
+  
+  .data_pin[0].port = PortC_Index ,
+  .data_pin[0].pin = pin2 ,
+  .data_pin[0].logic =Logic_Low ,
+  .data_pin[0].direction = Direction_Outpt ,
+  
+  .data_pin[1].port = PortC_Index ,
+  .data_pin[1].pin = pin3 ,
+  .data_pin[1].logic =Logic_Low ,
+  .data_pin[1].direction = Direction_Outpt ,
+  
+  .data_pin[2].port = PortC_Index ,
+  .data_pin[2].pin = pin4 ,
+  .data_pin[2].logic =Logic_Low ,
+  .data_pin[2].direction = Direction_Outpt ,
+  
+  .data_pin[3].port = PortC_Index ,
+  .data_pin[3].pin = pin5 ,
+  .data_pin[3].logic =Logic_Low ,
+  .data_pin[3].direction = Direction_Outpt ,
+  
+  
+};

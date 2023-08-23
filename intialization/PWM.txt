@@ -1,0 +1,33 @@
+CCP_config_t ccp1 =
+{
+  .CCP_Mode = CCP_PWM_Mode_Select,
+  .CCP_Select = CCP1_SELECT ,
+  .PWM_Frequncy = 20000,
+  .Prescaler_Select = 1,
+  .Postscaler_Select = 1,
+  .ccp_mode_varient = CCP_PWM_Mode_ ,
+  .CCP_pin.port = PortC_Index,
+  .CCP_pin.direction = Direction_Outpt,
+  .CCP_pin.pin = pin2,
+  .CCP1_IntterruptHandeler = NULL
+};
+CCP_config_t ccp2 =
+{
+  .CCP_Mode = CCP_PWM_Mode_Select,
+  .CCP_Select = CCP2_SELECT ,
+  .PWM_Frequncy = 20000,
+  .Prescaler_Select = 1,
+  .Postscaler_Select = 1,
+  .ccp_mode_varient = CCP_PWM_Mode_ ,
+  .CCP_pin.port = PortC_Index,
+  .CCP_pin.direction = Direction_Outpt,
+  .CCP_pin.pin = pin1,
+  .CCP2_IntterruptHandeler = NULL
+};
+Timer2_conf_t timer2 =
+{
+  .Prescaler_Select = TIMER2_PRESCALER_DIV_BY_1,
+  .Postscaler_Select = TIMER2_POSTSCALER_DIV_BY_1,
+  .TIMER2_IntterruptHandeler =NULL ,
+  .TIMER2_PRE_LOAD_VALUE = 0
+};

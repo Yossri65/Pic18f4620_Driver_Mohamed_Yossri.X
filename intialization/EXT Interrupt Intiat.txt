@@ -1,0 +1,93 @@
+
+ EXT_INTX_t int0_test =
+ {
+   .source = EXT_INT0 ,
+   .edge   = EXT_INT_Raising_Edge ,
+   .priority = EXT_High_Priority ,
+   .EXT_pin.port = PortB_Index ,
+   .EXT_pin.pin  = pin0 ,
+   .EXT_pin.direction =Direction_input ,
+   .Interrupt_Handler = ISR_INT0
+ };
+ void ISR_INT0(void)
+ {
+     
+ }
+
+
+
+
+EXT_RBX_t RB4_test =
+{
+  .EXT_pin.port = PortB_Index ,
+  .EXT_pin.pin = pin4 ,
+  .EXT_pin.direction =Direction_input,
+  .priority = EXT_High_Priority ,
+  .Interrupt_Handler_High = ISR_RB4_High,
+  .Interrupt_Handler_Low  = ISR_RB4_Low
+};
+
+EXT_RBX_t RB5_test =
+{
+  .EXT_pin.port = PortB_Index ,
+  .EXT_pin.pin = pin5 ,
+  .EXT_pin.direction =Direction_input,
+  .priority = EXT_High_Priority ,
+  .Interrupt_Handler_High = ISR_RB5_High,
+  .Interrupt_Handler_Low = ISR_RB5_Low
+};
+
+
+EXT_RBX_t RB6_test =
+{
+  .EXT_pin.port = PortB_Index ,
+  .EXT_pin.pin = pin6 ,
+  .EXT_pin.direction =Direction_input,
+  .priority = EXT_High_Priority ,
+  .Interrupt_Handler_High = ISR_RB6_High,
+  .Interrupt_Handler_Low = ISR_RB6_Low
+};
+EXT_RBX_t RB7_test =
+{
+  .EXT_pin.port = PortB_Index ,
+  .EXT_pin.pin = pin7 ,
+  .EXT_pin.direction =Direction_input,
+  .priority = EXT_High_Priority ,
+  .Interrupt_Handler_High = ISR_RB7_High,
+  .Interrupt_Handler_Low = ISR_RB7_Low
+};
+
+void ISR_RB4_High(void)
+{
+   
+};
+void ISR_RB4_Low(void)
+{
+    
+};
+void ISR_RB5_High(void)
+{
+    
+};
+void ISR_RB5_Low(void)
+{
+    
+};
+void ISR_RB6_High(void)
+{
+    
+};
+void ISR_RB6_Low(void)
+{
+    
+};
+void ISR_RB7_High(void)
+{
+   
+};
+void ISR_RB7_Low(void)
+{
+    
+};
+
+

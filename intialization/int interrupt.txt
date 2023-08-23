@@ -1,0 +1,54 @@
+ADC
+ADC_Conf_t adc_1 =
+{
+  .ADC_IntterruptHandeler = ADC1_ISR ,
+  .ADC_Acquisition_Time =  ADC_12_TAD ,
+  .ADC_Conversion_Clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16 ,
+  .ADC_Channel = ADC_CHANNEL_AN0,
+  .format_status = ADC_RIGHT_JUSTIFIED ,
+  .voltage_ref = ADC_VOLTAGE_REF_DISABLE
+};
+void ADC1_ISR(void)
+{
+    ret = ADC_Get_Conversion_Result(&adc_1 ,&conv_result_1);
+}
+
+/*in timer mode*/
+Timer0_conf_t timer0 =
+{
+    .TIMER0_IntterruptHandeler = timer0_isr ,
+    .Timer0_SELECT_BIT_Mode = TIMER0_16_BIT_MODE_,
+    .Timer0_Mode = TIMER0_TIMER_MODE_,
+    .TIMER0_PRESCALER_STATUS = TIMER0_PRESCALER_ENABLE_ ,
+    .Prescaler_Select = TIMER0_PRESCALER_DIV_BY_16,
+};
+
+void timer0_isr(void)
+{
+    
+}
+
+/*in counter mode*/
+Timer0_conf_t timer0 =
+{
+    .TIMER0_IntterruptHandeler = timer0_isr ,
+    .Timer0_SELECT_BIT_Mode = TIMER0_16_BIT_MODE_,
+    .Timer0_Mode = TIMER0_COUNTER_MODE_,
+    .Timer0_Source_Edge = TIMER0_RAISING_EDGE_,
+    .
+};
+
+
+Timer1_conf_t timer1_count_mode =
+{
+    .TIMER1_IntterruptHandeler = NULL,
+    .Timer1_SELECT_BIT_Mode = TIMER1_16BIT_READ_,
+    .Timer1_Mode = TIMER1_COUNTER_MODE_,
+    .TIMER1_PRE_LOAD_VALUE = 0,
+    .Timer1_Osc_Cfg = Timer1_Oscillator_Disable_,
+    .Timer1_Counter_Sync_Mode = TIMER1_SYNC_COUNTER_MODE_,
+};
+void timer0_isr(void)
+{
+    
+}
