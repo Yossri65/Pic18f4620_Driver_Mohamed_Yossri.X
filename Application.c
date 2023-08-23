@@ -17,7 +17,7 @@ void MSSP_I2C_Read_1_Byte(uint8 slave_add, uint8 *_data);
 
 mssp_i2c_t i2c_obj=
 {
-  .i2c_clock =100000 ,
+  .i2c_clock =1000000 ,
   .i2c_cfg.i2c_mode_cfg = I2C_MASTER_MODE_DEFINED_CLOCK,
   .i2c_cfg.i2c_mode = I2C_MSSP_MASTER_MODE ,
   .i2c_cfg.i2c_slew_rate = I2C_SLEW_RATE_DISABLE,
