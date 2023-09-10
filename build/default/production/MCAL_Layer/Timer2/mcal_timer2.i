@@ -4228,9 +4228,11 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 12 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 11 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+
 # 1 "MCAL_Layer/Timer2/../Device_config.h" 1
-# 13 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 12 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+
 # 1 "MCAL_Layer/Timer2/../GPIO/hal_GPIO.h" 1
 # 13 "MCAL_Layer/Timer2/../GPIO/hal_GPIO.h"
 # 1 "MCAL_Layer/Timer2/../GPIO/../std_libraries.h" 1
@@ -4399,7 +4401,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/Timer2/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer2/../GPIO/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4462,7 +4465,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/Timer2/../GPIO/../std_libraries.h" 2
+# 13 "MCAL_Layer/Timer2/../GPIO/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4475,7 +4479,7 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/Timer2/../GPIO/hal_GPIO.h" 2
+# 13 "MCAL_Layer/Timer2/../GPIO/hal_GPIO.h" 2
 # 31 "MCAL_Layer/Timer2/../GPIO/hal_GPIO.h"
 typedef enum
 {
@@ -4545,13 +4549,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 14 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 13 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+
 # 1 "MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4560,8 +4565,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 2
-# 15 "MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 12 "MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 2
+# 14 "MCAL_Layer/Timer2/mcal_timer2.h" 2
 # 25 "MCAL_Layer/Timer2/mcal_timer2.h"
 typedef enum
 {
@@ -4587,14 +4592,14 @@ typedef enum
 typedef enum
 {
     TIMER2_PRESCALER_DIV_BY_1 = 0,
-    TIMER2_PRESCALER_DIV_BY_4 ,
-    TIMER2_PRESCALER_DIV_BY_16
+    TIMER2_PRESCALER_DIV_BY_4 = 1,
+    TIMER2_PRESCALER_DIV_BY_16 = 2
 }Timer2_Prescaler_Select_t;
 
 typedef struct
 {
 
-    interruptHandler TIMER2_IntterruptHandeler;
+
 
 
 
@@ -4611,9 +4616,10 @@ Std_ReturnType Timer2_DeIntialization(const Timer2_conf_t *timer2_);
 Std_ReturnType Timer2_Write_Value(const Timer2_conf_t *timer2_ ,uint8 value);
 
 Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value);
-# 9 "MCAL_Layer/Timer2/mcal_timer2.c" 2
+# 8 "MCAL_Layer/Timer2/mcal_timer2.c" 2
 
-   interruptHandler TIMER2_IntterruptHandeler_ = ((void*)0);
+
+
 
 static volatile uint16 pre_load = 0;
 
@@ -4630,25 +4636,12 @@ Std_ReturnType Timer2_Intialization(const Timer2_conf_t *timer2_)
 
         (T2CONbits.TMR2ON = 0);
 
-        (T2CONbits.TOUTPS = timer2_->Prescaler_Select);
+        (T2CONbits.T2CKPS = timer2_->Prescaler_Select);
 
-        (T2CONbits.T2CKPS = timer2_->Postscaler_Select);
+        (T2CONbits.TOUTPS = timer2_->Postscaler_Select);
         TMR2 = (timer2_->TIMER2_PRE_LOAD_VALUE);
         pre_load = timer2_->TIMER2_PRE_LOAD_VALUE;
-
-
-
-        (PIE1bits.TMR2IE = 1);
-
-        (PIR1bits.TMR2IF = 0);
-
-        TIMER2_IntterruptHandeler_ =timer2_->TIMER2_IntterruptHandeler;
-# 53 "MCAL_Layer/Timer2/mcal_timer2.c"
-        (INTCONbits.GIE = 1);
-        (INTCONbits.PEIE = 1);
-
-
-
+# 58 "MCAL_Layer/Timer2/mcal_timer2.c"
         (T2CONbits.TMR2ON = 1);
     }
      return ret;
@@ -4666,7 +4659,7 @@ Std_ReturnType Timer2_DeIntialization(const Timer2_conf_t *timer2_)
         (T2CONbits.TMR2ON = 0);
 
 
-       (PIE1bits.TMR2IE = 0);
+
 
 
     }
@@ -4702,10 +4695,13 @@ Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value)
 }
 
 
-void TIMER2_ISR(void){
-    (PIR1bits.TMR2IF = 0);
-    TMR2 = (uint8)(pre_load);
-    if(TIMER2_IntterruptHandeler_){
-        TIMER2_IntterruptHandeler_();
-    }
+
+   void TIMER2_ISR(void){
+
+
+
+
+
+
+
 }

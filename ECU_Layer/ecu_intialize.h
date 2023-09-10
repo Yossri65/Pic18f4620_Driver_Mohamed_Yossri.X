@@ -17,6 +17,7 @@
 #include "seven_segment/ecu_seven_segment.h"
 #include "Key_Pad/ecu_key_pad.h"
 #include "Ch_LCD/ecu_ch_lcd.h"
+#include "Servo_Motor/servo_motor.h"
 /* ------------------------------------Macro Declarations--------------------------- */
 
 /* ------------------------------------Macro Function Declarations------------------ */

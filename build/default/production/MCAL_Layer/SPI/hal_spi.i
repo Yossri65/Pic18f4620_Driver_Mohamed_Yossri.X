@@ -4227,7 +4227,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_Layer/SPI/hal_spi.h" 2
+# 12 "MCAL_Layer/SPI/hal_spi.h" 2
+
 # 1 "MCAL_Layer/SPI/../std_libraries.h" 1
 # 12 "MCAL_Layer/SPI/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4394,7 +4395,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/SPI/../std_libraries.h" 2
+# 12 "MCAL_Layer/SPI/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4457,7 +4459,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/SPI/../std_libraries.h" 2
+# 13 "MCAL_Layer/SPI/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4470,11 +4473,12 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/SPI/hal_spi.h" 2
+# 13 "MCAL_Layer/SPI/hal_spi.h" 2
+
 # 1 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/hal_gpio.h" 1
 # 14 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/hal_gpio.h"
 # 1 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/../Device_config.h" 1
-# 15 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 14 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 # 31 "MCAL_Layer/SPI/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum
 {
@@ -4544,13 +4548,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 15 "MCAL_Layer/SPI/hal_spi.h" 2
+# 14 "MCAL_Layer/SPI/hal_spi.h" 2
+
 # 1 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4559,8 +4564,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
-# 16 "MCAL_Layer/SPI/hal_spi.h" 2
+# 12 "MCAL_Layer/SPI/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_Layer/SPI/hal_spi.h" 2
 # 53 "MCAL_Layer/SPI/hal_spi.h"
 typedef struct{
     uint8 ClockPolarity : 2;
@@ -4588,7 +4593,8 @@ Std_ReturnType SPI_SendString(uint8 *_data ,uint16 str_len);
 Std_ReturnType SPI_Read_Byte(const SPI_Config *_SPI_, uint8 *_data);
 Std_ReturnType SPI_Send_Byte_NonBlocking(const SPI_Config *_SPI_, const uint8 _data);
 Std_ReturnType SPI_Read_Byte_NonBlocking(const SPI_Config *_SPI_, uint8 *_data);
-# 8 "MCAL_Layer/SPI/hal_spi.c" 2
+# 7 "MCAL_Layer/SPI/hal_spi.c" 2
+
 
 
     interruptHandler MSSP_SPI_IntterruptHandeler = ((void*)0);

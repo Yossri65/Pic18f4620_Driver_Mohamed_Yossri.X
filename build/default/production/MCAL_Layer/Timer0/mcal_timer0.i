@@ -4227,9 +4227,11 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+# 12 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+
 # 1 "MCAL_Layer/Timer0/../Device_config.h" 1
-# 14 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+# 13 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+
 # 1 "MCAL_Layer/Timer0/../GPIO/hal_GPIO.h" 1
 # 13 "MCAL_Layer/Timer0/../GPIO/hal_GPIO.h"
 # 1 "MCAL_Layer/Timer0/../GPIO/../std_libraries.h" 1
@@ -4398,7 +4400,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/Timer0/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer0/../GPIO/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4461,7 +4464,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/Timer0/../GPIO/../std_libraries.h" 2
+# 13 "MCAL_Layer/Timer0/../GPIO/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4474,7 +4478,7 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/Timer0/../GPIO/hal_GPIO.h" 2
+# 13 "MCAL_Layer/Timer0/../GPIO/hal_GPIO.h" 2
 # 31 "MCAL_Layer/Timer0/../GPIO/hal_GPIO.h"
 typedef enum
 {
@@ -4544,13 +4548,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 15 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+# 14 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+
 # 1 "MCAL_Layer/Timer0/../Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/Timer0/../Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/Timer0/../Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4559,8 +4564,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/Timer0/../Interrupt/mcal_internal_interrupt.h" 2
-# 16 "MCAL_Layer/Timer0/mcal_timer0.h" 2
+# 12 "MCAL_Layer/Timer0/../Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_Layer/Timer0/mcal_timer0.h" 2
 # 47 "MCAL_Layer/Timer0/mcal_timer0.h"
 typedef enum
 {
@@ -4585,7 +4590,7 @@ typedef struct
     Timer0_Prescaler_Select_t Prescaler_Select ;
     uint16 TIMER0_PRE_LOAD_VALUE;
     uint8 TIMER0_PRESCALER_STATUS:1 ;
-    uint8 Timer0_Source_Edge:1;
+    uint8 Timer0_counter_mode_Source_Edge:1;
     uint8 Timer0_Mode:1;
     uint8 Timer0_SELECT_BIT_Mode:1;
     uint8 Timer0_Resreved: 4;
@@ -4598,7 +4603,8 @@ Std_ReturnType Timer0_DeIntialization(const Timer0_conf_t *timer0_);
 Std_ReturnType Timer0_Write_Value(const Timer0_conf_t *timer0_ ,uint16 value);
 
 Std_ReturnType Timer0_Read_Value(const Timer0_conf_t *timer0_ ,uint16 *value);
-# 8 "MCAL_Layer/Timer0/mcal_timer0.c" 2
+# 7 "MCAL_Layer/Timer0/mcal_timer0.c" 2
+
 
 
    interruptHandler TIMER0_IntterruptHandeler = ((void*)0);
@@ -4697,7 +4703,7 @@ Std_ReturnType Timer0_Read_Value(const Timer0_conf_t *timer0_ ,uint16 *value)
         l_tmr0l = TMR0L;
         l_tmr0h = TMR0H;
 
-        *value = (uint16)(l_tmr0h << 8) + l_tmr0l;
+        *value = (uint16)((l_tmr0h << 8) + l_tmr0l);
     }
     return ret;
 }
@@ -4727,9 +4733,9 @@ static void Timer0_Mode_Select(const Timer0_conf_t *timer0_)
     else if(1 == timer0_->Timer0_Mode)
     {
         (T0CONbits.T0CS = 1);
-        if (1 == timer0_->Timer0_Source_Edge) {
+        if (1 == timer0_->Timer0_counter_mode_Source_Edge) {
             (T0CONbits.T0SE = 1);
-        } else if (0 == timer0_->Timer0_Source_Edge) {
+        } else if (0 == timer0_->Timer0_counter_mode_Source_Edge) {
             (T0CONbits.T0SE = 0);
         } else {
 
@@ -4745,7 +4751,7 @@ static void Timer0_Bit_Mode_Select(const Timer0_conf_t *timer0_)
     {
         (T0CONbits.T08BIT = 1);
     }
-    else if(1 == timer0_->Timer0_SELECT_BIT_Mode)
+    else if(0 == timer0_->Timer0_SELECT_BIT_Mode)
     {
         (T0CONbits.T08BIT = 0);
     }
@@ -4756,7 +4762,7 @@ void TIMER0_ISR(void)
 {
 
 
-
+    (INTCONbits.TMR0IF = 0);
 
     TMR0H = (pre_load>>8);
     TMR0L = (uint8)(pre_load);

@@ -25,7 +25,7 @@
 #define TIMER0_TIMER_MODE_   0
 
 #define TIMER0_8_BIT_MODE_   1
-#define TIMER0_16_BIT_MODE_  1
+#define TIMER0_16_BIT_MODE_  0
 /* ------------------------------------Macro Function Declarations------------------ */
 
 #define TIMER0_ENABLE()  (T0CONbits.TMR0ON = 1)
@@ -67,7 +67,7 @@ typedef struct
     Timer0_Prescaler_Select_t Prescaler_Select ;
     uint16 TIMER0_PRE_LOAD_VALUE;
     uint8 TIMER0_PRESCALER_STATUS:1 ;
-    uint8 Timer0_Source_Edge:1;
+    uint8 Timer0_counter_mode_Source_Edge:1;
     uint8 Timer0_Mode:1;
     uint8 Timer0_SELECT_BIT_Mode:1;
     uint8 Timer0_Resreved: 4;

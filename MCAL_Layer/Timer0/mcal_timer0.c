@@ -115,7 +115,7 @@ Std_ReturnType Timer0_Read_Value(const Timer0_conf_t *timer0_ ,uint16 *value)
         l_tmr0l = TMR0L;
         l_tmr0h = TMR0H;
         
-        *value = (uint16)(l_tmr0h << 8) + l_tmr0l;
+        *value = (uint16)((l_tmr0h << 8) + l_tmr0l);
     }
     return ret;
 }
@@ -145,9 +145,9 @@ static void Timer0_Mode_Select(const Timer0_conf_t *timer0_)
     else if(TIMER0_COUNTER_MODE_ == timer0_->Timer0_Mode)
     {
         TIMER0_COUNTER_MODE();
-        if (TIMER0_FALING_EDGE_ == timer0_->Timer0_Source_Edge) {
+        if (TIMER0_FALING_EDGE_ == timer0_->Timer0_counter_mode_Source_Edge) {
             TIMER0_FALING_EDGE_SELECT();
-        } else if (TIMER0_RAISING_EDGE_ == timer0_->Timer0_Source_Edge) {
+        } else if (TIMER0_RAISING_EDGE_ == timer0_->Timer0_counter_mode_Source_Edge) {
             TIMER0_RAISING_EDGE_SELECT();
         } else {
             /*Nothing*/
@@ -174,7 +174,7 @@ void TIMER0_ISR(void)
 {
     #ifdef TIMER0_INTERRUPT_FEATURE_ENABLE
      /*Clear Flag*/
-    
+    TIMER0_INTERRUPT_Clear_Flag();
     /*code*/
     TMR0H = (pre_load>>8);
     TMR0L = (uint8)(pre_load);

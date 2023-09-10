@@ -94,8 +94,8 @@ Std_ReturnType ecu_intialize()
 {
     Std_ReturnType ret =E_NOT_OK;
     //ret = Led_Intialize(&led1);
-    ret = lcd_intialize(&lcd1);
-    ret = Key_Pad_Intialize(&key_pad1);
+    //ret = lcd_intialize(&lcd1);
+    //ret = Key_Pad_Intialize(&key_pad1);
     
     return ret;
 }

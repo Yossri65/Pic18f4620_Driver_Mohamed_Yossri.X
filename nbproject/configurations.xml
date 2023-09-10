@@ -23,6 +23,9 @@
         <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
           <itemPath>ECU_Layer/Relay/ecu_relay.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Servo_Motor" displayName="Servo_Motor" projectFiles="true">
+          <itemPath>ECU_Layer/Servo_Motor/servo_motor.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="seven_segment"
                        displayName="seven_segment"
                        projectFiles="true">
@@ -107,6 +110,9 @@
         </logicalFolder>
         <logicalFolder name="Relay" displayName="Relay" projectFiles="true">
           <itemPath>ECU_Layer/Relay/ecu_relay.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Servo_Motor" displayName="Servo_Motor" projectFiles="true">
+          <itemPath>ECU_Layer/Servo_Motor/servo_motor.c</itemPath>
         </logicalFolder>
         <logicalFolder name="seven_segment"
                        displayName="seven_segment"

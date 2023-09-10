@@ -180,14 +180,14 @@ Std_ReturnType CCP_Deintialize(const CCP_config_t *_CCP_)
 #endif
 
 #ifdef CCP_PWM_Mode
-    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const uint8 _duty)
+    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const float _duty)
     {
          Std_ReturnType ret = E_OK;
          uint16 l_duty_temp = 0 ;
         if (_CCP_ == NULL) {
          ret = E_NOT_OK;
         } else {
-            l_duty_temp = (uint16)((PR2 + 1)*(_duty/100.0)*4);
+            l_duty_temp = (float)((float)4 * ((float)PR2 + 1.0) * ((float)_duty / 100.0)); 
             if(CCP1_SELECT == _CCP_->CCP_Select)
             {
                 CCP1CONbits.DC1B = (uint8)(l_duty_temp & 0x0003);
@@ -304,7 +304,7 @@ static void CCP_PWM_Config(const CCP_config_t *_CCP_ )
         }
     }
 #ifdef CCP_PWM_Mode
-    PR2 = (uint8) ((_XTAL_FREQ / ((_CCP_->PWM_Frequncy) * 4.0 * (_CCP_->Postscaler_Select) * (_CCP_->Prescaler_Select))) - 1.0);
+    PR2 = (uint8) ((_XTAL_FREQ / ((float)(_CCP_->PWM_Frequncy) * 4.0 * (float)(_CCP_->Postscaler_Select) * (float)(_CCP_->Prescaler_Select))) - 1.0);
 #endif
 }
 

@@ -517,20 +517,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 279 ]
 }
 "39
-[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 39:         _delay((unsigned long)((20)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 39:         _delay((unsigned long)((20)*(500000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 500000 `ul `d .4000.0 `ul ]
 "40
 [; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 40:         lcd_send_command(_LCD_ ,0x38);
 [e ( _lcd_send_command (2 , __LCD_ -> -> 56 `i `uc ]
 "41
-[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 41:         _delay((unsigned long)((5)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 41:         _delay((unsigned long)((5)*(500000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `ul `d .4000.0 `ul ]
 "42
 [; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 42:         lcd_send_command(_LCD_ ,0x38);
 [e ( _lcd_send_command (2 , __LCD_ -> -> 56 `i `uc ]
 "43
-[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 43:         _delay((unsigned long)((150)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 43:         _delay((unsigned long)((150)*(500000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 500000 `ul `d .4000.0 `ul ]
 "44
 [; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 44:         lcd_send_command(_LCD_ ,0x38);
 [e ( _lcd_send_command (2 , __LCD_ -> -> 56 `i `uc ]
@@ -1302,8 +1302,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 287:     GPIO_Pin_Write_Logic(&(_LCD_->EN) ,Logic_High);
 [e ( _GPIO_Pin_Write_Logic (2 , &U . *U __LCD_ 1 . `E2786 1 ]
 "288
-[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 288:     _delay((unsigned long)((5)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
+[; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 288:     _delay((unsigned long)((5)*(500000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 500000 `ul `d .4000000.0 `ul ]
 "289
 [; ;ECU_Layer/Ch_LCD/ecu_ch_lcd.c: 289:     GPIO_Pin_Write_Logic(&(_LCD_->EN) ,Logic_Low);
 [e ( _GPIO_Pin_Write_Logic (2 , &U . *U __LCD_ 1 . `E2786 0 ]

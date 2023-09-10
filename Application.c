@@ -12,8 +12,10 @@ void intialization (void);
 
 int main(void) {
     intialization();
+    
+    
     while(1)
-    {
+    {   
         
     }
     return (EXIT_SUCCESS);
@@ -21,5 +23,5 @@ int main(void) {
 
 void intialization (void)
 {
-    ecu_intialize( );
+    
 }

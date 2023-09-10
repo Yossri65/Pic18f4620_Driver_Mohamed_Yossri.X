@@ -9,9 +9,9 @@
 #define	CCP1_CFG_H
 
 /* ------------------------------------Includes--------------------------------------*/
-#define CCP_Capture_Mode 
+//#define CCP_Capture_Mode 
 //#define CCP_Compare_Mode 
-//#define CCP_PWM_Mode
+#define CCP_PWM_Mode
 /* ------------------------------------Macro Declarations--------------------------- */
 
 

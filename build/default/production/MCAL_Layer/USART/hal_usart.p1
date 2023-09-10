@@ -1111,8 +1111,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 144:             TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
 "145
-[; ;MCAL_Layer/USART/hal_usart.c: 145:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/64) - 1;
-[e = _baudrate_temp - / / -> -> 4000000 `ul `f -> . *U __usart 0 `f -> -> 64 `i `f -> -> 1 `i `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 145:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/64) - 1;
+[e = _baudrate_temp - / / -> -> 500000 `ul `f -> . *U __usart 0 `f -> -> 64 `i `f -> -> 1 `i `f ]
 "146
 [; ;MCAL_Layer/USART/hal_usart.c: 146:         break;
 [e $U 312  ]
@@ -1129,8 +1129,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 150:             TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "151
-[; ;MCAL_Layer/USART/hal_usart.c: 151:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/16.0) - 1;
-[e = _baudrate_temp -> - / -> / -> -> 4000000 `ul `f -> . *U __usart 0 `f `d .16.0 -> -> 1 `i `d `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 151:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/16.0) - 1;
+[e = _baudrate_temp -> - / -> / -> -> 500000 `ul `f -> . *U __usart 0 `f `d .16.0 -> -> 1 `i `d `f ]
 "153
 [; ;MCAL_Layer/USART/hal_usart.c: 153:         break;
 [e $U 312  ]
@@ -1147,8 +1147,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 157:             TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
 "158
-[; ;MCAL_Layer/USART/hal_usart.c: 158:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/16.0) - 1;
-[e = _baudrate_temp -> - / -> / -> -> 4000000 `ul `f -> . *U __usart 0 `f `d .16.0 -> -> 1 `i `d `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 158:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/16.0) - 1;
+[e = _baudrate_temp -> - / -> / -> -> 500000 `ul `f -> . *U __usart 0 `f `d .16.0 -> -> 1 `i `d `f ]
 "159
 [; ;MCAL_Layer/USART/hal_usart.c: 159:         break;
 [e $U 312  ]
@@ -1165,8 +1165,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 163:             TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "164
-[; ;MCAL_Layer/USART/hal_usart.c: 164:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
-[e = _baudrate_temp - / / -> -> 4000000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 164:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
+[e = _baudrate_temp - / / -> -> 500000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
 "165
 [; ;MCAL_Layer/USART/hal_usart.c: 165:         break;
 [e $U 312  ]
@@ -1180,8 +1180,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 168:             BAUDCONbits.BRG16 = 1;
 [e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
 "169
-[; ;MCAL_Layer/USART/hal_usart.c: 169:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
-[e = _baudrate_temp - / / -> -> 4000000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 169:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
+[e = _baudrate_temp - / / -> -> 500000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
 "170
 [; ;MCAL_Layer/USART/hal_usart.c: 170:         break;
 [e $U 312  ]
@@ -1195,8 +1195,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/USART/hal_usart.c: 173:             BAUDCONbits.BRG16 = 0;
 [e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
 "174
-[; ;MCAL_Layer/USART/hal_usart.c: 174:             baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
-[e = _baudrate_temp - / / -> -> 4000000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
+[; ;MCAL_Layer/USART/hal_usart.c: 174:             baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
+[e = _baudrate_temp - / / -> -> 500000 `ul `f -> . *U __usart 0 `f -> -> 4 `i `f -> -> 1 `i `f ]
 "175
 [; ;MCAL_Layer/USART/hal_usart.c: 175:         break;
 [e $U 312  ]

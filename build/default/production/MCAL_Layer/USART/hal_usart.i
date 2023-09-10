@@ -4227,7 +4227,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_Layer/USART/hal_usart.h" 2
+# 12 "MCAL_Layer/USART/hal_usart.h" 2
+
 # 1 "MCAL_Layer/USART/../std_libraries.h" 1
 # 12 "MCAL_Layer/USART/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4394,7 +4395,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/USART/../std_libraries.h" 2
+# 12 "MCAL_Layer/USART/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4457,7 +4459,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/USART/../std_libraries.h" 2
+# 13 "MCAL_Layer/USART/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4470,15 +4473,17 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/USART/hal_usart.h" 2
+# 13 "MCAL_Layer/USART/hal_usart.h" 2
+
 # 1 "MCAL_Layer/USART/../Device_config.h" 1
-# 15 "MCAL_Layer/USART/hal_usart.h" 2
+# 14 "MCAL_Layer/USART/hal_usart.h" 2
+
 # 1 "MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4487,8 +4492,9 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h" 2
-# 16 "MCAL_Layer/USART/hal_usart.h" 2
+# 12 "MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_Layer/USART/hal_usart.h" 2
+
 # 1 "MCAL_Layer/USART/../GPIO/hal_GPIO.h" 1
 # 31 "MCAL_Layer/USART/../GPIO/hal_GPIO.h"
 typedef enum
@@ -4559,9 +4565,10 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 17 "MCAL_Layer/USART/hal_usart.h" 2
+# 16 "MCAL_Layer/USART/hal_usart.h" 2
+
 # 1 "MCAL_Layer/USART/hal_usart_cfg.h" 1
-# 18 "MCAL_Layer/USART/hal_usart.h" 2
+# 17 "MCAL_Layer/USART/hal_usart.h" 2
 # 70 "MCAL_Layer/USART/hal_usart.h"
 typedef enum
 {
@@ -4628,7 +4635,8 @@ Std_ReturnType EUSART_ASYNC_WriteStringBlocking(uint8 *_data ,uint16 str_len);
 
 Std_ReturnType EUSART_ASYNC_WriteByteNoBlocking(uint8 _data);
 Std_ReturnType EUSART_ASYNC_WriteStringNoBlocking(uint8 *_data ,uint16 str_len);
-# 8 "MCAL_Layer/USART/hal_usart.c" 2
+# 7 "MCAL_Layer/USART/hal_usart.c" 2
+
 
 
    interruptHandler USART_TX_IntterruptHandeler_ = ((void*)0);
@@ -4766,36 +4774,36 @@ static void EUSART_Baud_Rate_Calculation(const USART_CONFIG_t *_usart)
             TXSTAbits.SYNC = 0;
             BAUDCONbits.BRG16 = 0;
             TXSTAbits.BRGH = 0;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/64) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/64) - 1;
         break;
         case BAUDRATE_ASYN_8BIT_HIGH_SPEED:
             TXSTAbits.SYNC = 0;
             BAUDCONbits.BRG16 = 0;
             TXSTAbits.BRGH = 1;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/16.0) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/16.0) - 1;
 
         break;
         case BAUDRATE_ASYN_16BIT_lOW_SPEED :
             TXSTAbits.SYNC = 0;
             BAUDCONbits.BRG16 = 1;
             TXSTAbits.BRGH = 0;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/16.0) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/16.0) - 1;
         break;
         case BAUDRATE_ASYN_16BIT_HIGH_SPEED:
             TXSTAbits.SYNC = 0;
             BAUDCONbits.BRG16 = 0;
             TXSTAbits.BRGH = 1;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
         break;
         case BAUDRATE_SYN_16BIT:
             TXSTAbits.SYNC = 1;
             BAUDCONbits.BRG16 = 1;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
         break;
         case BAUDRATE_SYN_8BIT:
             TXSTAbits.SYNC = 1;
             BAUDCONbits.BRG16 = 0;
-            baudrate_temp = ((4000000UL /(float)_usart->baudrate)/4) - 1;
+            baudrate_temp = ((500000UL /(float)_usart->baudrate)/4) - 1;
         break;
         default : ;
     }

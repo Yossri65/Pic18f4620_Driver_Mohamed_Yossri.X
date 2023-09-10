@@ -10,4 +10,11 @@ ECU_Layer/Relay/ecu_relay.h  \
 ECU_Layer/dc_motor/ecu_dc_motor.h  \
 ECU_Layer/seven_segment/ecu_seven_segment.h  \
 ECU_Layer/Key_Pad/ecu_key_pad.h  \
-ECU_Layer/Ch_LCD/ecu_ch_lcd.h 
+ECU_Layer/Ch_LCD/ecu_ch_lcd.h  \
+ECU_Layer/Servo_Motor/servo_motor.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_gen_cfg.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h  \
+ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/ccp_cfg.h 

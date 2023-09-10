@@ -4228,7 +4228,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_Layer/I2C/hal_i2c.h" 2
+# 12 "MCAL_Layer/I2C/hal_i2c.h" 2
+
 # 1 "MCAL_Layer/I2C/../std_libraries.h" 1
 # 12 "MCAL_Layer/I2C/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4395,7 +4396,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/I2C/../std_libraries.h" 2
+# 12 "MCAL_Layer/I2C/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4458,7 +4460,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/I2C/../std_libraries.h" 2
+# 13 "MCAL_Layer/I2C/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4471,11 +4474,12 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/I2C/hal_i2c.h" 2
+# 13 "MCAL_Layer/I2C/hal_i2c.h" 2
+
 # 1 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/hal_gpio.h" 1
 # 14 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/hal_gpio.h"
 # 1 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/../Device_config.h" 1
-# 15 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 14 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 # 31 "MCAL_Layer/I2C/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum
 {
@@ -4545,13 +4549,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 15 "MCAL_Layer/I2C/hal_i2c.h" 2
+# 14 "MCAL_Layer/I2C/hal_i2c.h" 2
+
 # 1 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4560,8 +4565,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
-# 16 "MCAL_Layer/I2C/hal_i2c.h" 2
+# 12 "MCAL_Layer/I2C/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_Layer/I2C/hal_i2c.h" 2
 # 77 "MCAL_Layer/I2C/hal_i2c.h"
 typedef struct{
  uint8 i2c_mode_cfg;
@@ -4601,7 +4606,8 @@ Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ac
 
 Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
 Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
-# 9 "MCAL_Layer/I2C/hal_i2c.c" 2
+# 8 "MCAL_Layer/I2C/hal_i2c.c" 2
+
 
 static __attribute__((inline)) void MSSP_I2C_Mode_GPIO_CFG(void);
 static __attribute__((inline)) void I2C_Master_Mode_Clock_Configurations(const mssp_i2c_t *i2c_obj);
@@ -4861,7 +4867,7 @@ static __attribute__((inline)) void MSSP_I2C_Mode_GPIO_CFG(void){
 static __attribute__((inline)) void I2C_Master_Mode_Clock_Configurations(const mssp_i2c_t *i2c_obj){
 
     SSPCON1bits.SSPM = i2c_obj->i2c_cfg.i2c_mode_cfg;
-    SSPADD = (uint8)(((4000000UL / 4.0) / i2c_obj->i2c_clock) - 1);
+    SSPADD = (uint8)(((500000UL / 4.0) / i2c_obj->i2c_clock) - 1);
 }
 
 static __attribute__((inline)) void I2C_Slave_Mode_Configurations(const mssp_i2c_t *i2c_obj){

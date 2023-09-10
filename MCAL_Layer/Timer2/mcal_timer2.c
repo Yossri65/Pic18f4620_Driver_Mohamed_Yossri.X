@@ -6,7 +6,7 @@
  */
 
 #include "mcal_timer2.h"
-#ifdef TIMER1_INTERRUPT_FEATURE_ENABLE
+#ifdef TIMER2_INTERRUPT_FEATURE_ENABLE
    interruptHandler TIMER2_IntterruptHandeler_ = NULL;
 #endif
 static volatile uint16 pre_load = 0; 
@@ -108,10 +108,13 @@ Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value)
 }
 
 /*_____Function of interrupt____*/
-void TIMER2_ISR(void){
+
+   void TIMER2_ISR(void){
+#ifdef TIMER2_INTERRUPT_FEATURE_ENABLE
     TIMER2_INTERRUPT_Clear_Flag();
     TMR2 = (uint8)(pre_load);
     if(TIMER2_IntterruptHandeler_){
         TIMER2_IntterruptHandeler_();
     }
+#endif
 }

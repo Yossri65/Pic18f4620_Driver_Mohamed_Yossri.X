@@ -16,7 +16,8 @@
 # 1 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 1
 # 12 "MCAL_Layer/MCAL_ADC/mcal_adc.h"
 # 1 "MCAL_Layer/MCAL_ADC/mcal_adc_cfg.h" 1
-# 13 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 12 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\proc\\pic18f4620.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\proc\\pic18f4620.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\__at.h" 1 3
@@ -4229,9 +4230,11 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 14 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 13 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+
 # 1 "MCAL_Layer/MCAL_ADC/../Device_config.h" 1
-# 15 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 14 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+
 # 1 "MCAL_Layer/MCAL_ADC/../GPIO/hal_GPIO.h" 1
 # 13 "MCAL_Layer/MCAL_ADC/../GPIO/hal_GPIO.h"
 # 1 "MCAL_Layer/MCAL_ADC/../GPIO/../std_libraries.h" 1
@@ -4400,7 +4403,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/MCAL_ADC/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/MCAL_ADC/../GPIO/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4463,7 +4467,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/MCAL_ADC/../GPIO/../std_libraries.h" 2
+# 13 "MCAL_Layer/MCAL_ADC/../GPIO/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4476,7 +4481,7 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/MCAL_ADC/../GPIO/hal_GPIO.h" 2
+# 13 "MCAL_Layer/MCAL_ADC/../GPIO/hal_GPIO.h" 2
 # 31 "MCAL_Layer/MCAL_ADC/../GPIO/hal_GPIO.h"
 typedef enum
 {
@@ -4546,13 +4551,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 16 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 15 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+
 # 1 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4561,8 +4567,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 17 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 12 "MCAL_Layer/MCAL_ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 16 "MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
 # 70 "MCAL_Layer/MCAL_ADC/mcal_adc.h"
 typedef enum
 {
@@ -4635,7 +4641,8 @@ Std_ReturnType ADC_Get_Conversion_Result(const ADC_Conf_t *adc_ ,uint16 *convers
 Std_ReturnType ADC_Get_Conversion_Blocking_Mode(const ADC_Conf_t *adc_ ,uint16 *conversion_Result
                                   ,ADC_Channel_Selection_t channel);
 Std_ReturnType ADC_Start_Conversion_Interrupt_Mode(const ADC_Conf_t *adc_,ADC_Channel_Selection_t channel);
-# 8 "MCAL_Layer/MCAL_ADC/mcal_adc.c" 2
+# 7 "MCAL_Layer/MCAL_ADC/mcal_adc.c" 2
+
 
 
 

@@ -4227,7 +4227,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "MCAL_Layer/ECCP/hal_eccp.h" 2
+# 12 "MCAL_Layer/ECCP/hal_eccp.h" 2
+
 # 1 "MCAL_Layer/ECCP/../std_libraries.h" 1
 # 12 "MCAL_Layer/ECCP/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4394,7 +4395,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "MCAL_Layer/ECCP/../std_libraries.h" 2
+# 12 "MCAL_Layer/ECCP/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4457,7 +4459,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "MCAL_Layer/ECCP/../std_libraries.h" 2
+# 13 "MCAL_Layer/ECCP/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4470,11 +4473,12 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "MCAL_Layer/ECCP/hal_eccp.h" 2
+# 13 "MCAL_Layer/ECCP/hal_eccp.h" 2
+
 # 1 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/hal_gpio.h" 1
 # 14 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/hal_gpio.h"
 # 1 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/../Device_config.h" 1
-# 15 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 14 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 # 31 "MCAL_Layer/ECCP/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum
 {
@@ -4544,13 +4548,14 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 15 "MCAL_Layer/ECCP/hal_eccp.h" 2
+# 14 "MCAL_Layer/ECCP/hal_eccp.h" 2
+
 # 1 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 1
 # 12 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h"
 # 1 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 1
 # 12 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 # 1 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
+# 12 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 # 43 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_interrupt_config.h"
 typedef void (*interruptHandler) (void);
 
@@ -4559,8 +4564,8 @@ typedef enum
     High_Priority = 0 ,
     Low_Priority
 }Interrupt_Priority;
-# 13 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
-# 16 "MCAL_Layer/ECCP/hal_eccp.h" 2
+# 12 "MCAL_Layer/ECCP/../../MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 2
+# 15 "MCAL_Layer/ECCP/hal_eccp.h" 2
 # 77 "MCAL_Layer/ECCP/hal_eccp.h"
 typedef enum
 {
@@ -4607,7 +4612,8 @@ Std_ReturnType ECCP_Deintialize(const ECCP_CONFIG_t *_ECCP_);
 Std_ReturnType ECCP_PWM_Set_Duty(const ECCP_CONFIG_t *_ECCP_ ,const uint8 _duty);
 Std_ReturnType ECCP_PWM_Start(const ECCP_CONFIG_t *_ECCP_);
 Std_ReturnType ECCP_PWM_Stop(const ECCP_CONFIG_t *_ECCP_);
-# 8 "MCAL_Layer/ECCP/hal_eccp.c" 2
+# 7 "MCAL_Layer/ECCP/hal_eccp.c" 2
+
 
    interruptHandler ECCP_IntterruptHandeler_ = ((void*)0);
 
@@ -4630,8 +4636,8 @@ Std_ReturnType ECCP_intialize(const ECCP_CONFIG_t *_ECCP_)
             ret = GPIO_Pin_Intialize(&(_ECCP_->eccp_pinC));
             ret = GPIO_Pin_Intialize(&(_ECCP_->eccp_pinD));
             ECCP_Interrupt_Config(_ECCP_);
-            PR2 = (uint8)((4000000UL / ((_ECCP_->PWM_Frequncy) * 4.0 * (_ECCP_->Postscaler_Select) * (_ECCP_->Prescaler_Select))) - 1.0);
-            PWM1CONbits.PDC = _ECCP_->delay /(4.0 *4000000UL) ;
+            PR2 = (uint8)((500000UL / ((_ECCP_->PWM_Frequncy) * 4.0 * (_ECCP_->Postscaler_Select) * (_ECCP_->Prescaler_Select))) - 1.0);
+            PWM1CONbits.PDC = _ECCP_->delay /(4.0 *500000UL) ;
             ECCP1ASbits.ECCPASE = 0;
             PWM1CONbits.PRSEN = 1 ;
             ECCP1ASbits.PSSBD = _ECCP_->Pins_B_D_Shutdown_State;

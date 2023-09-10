@@ -42,7 +42,7 @@
 /* ------------------------------------Data Type Declarations----------------------- */
 typedef enum
 {
-    CCP_POSTSCALER_DIV_BY_1 = 0,
+    CCP_POSTSCALER_DIV_BY_1 = 1,
     CCP_POSTSCALER_DIV_BY_2 ,
     CCP_POSTSCALER_DIV_BY_3 ,
     CCP_POSTSCALER_DIV_BY_4 ,
@@ -63,9 +63,9 @@ typedef enum
 
 typedef enum
 {
-    CCP_PRESCALER_DIV_BY_1 = 0,
-    CCP_PRESCALER_DIV_BY_4 ,
-    CCP_PRESCALER_DIV_BY_16 
+    CCP_PRESCALER_DIV_BY_1 = 1,
+    CCP_PRESCALER_DIV_BY_4 = 4,
+    CCP_PRESCALER_DIV_BY_16 = 16
 }CCP_Timer2_Prescaler_Select_t;
 
 typedef enum
@@ -141,7 +141,7 @@ Std_ReturnType CCP_Deintialize(const CCP_config_t *_CCP_);
 #endif
 
 #ifdef CCP_PWM_Mode
-    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const uint8 _duty);
+    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const float _duty);
     Std_ReturnType CCP_PWM_Start(const CCP_config_t *_CCP_);
     Std_ReturnType CCP_PWM_Stop(const CCP_config_t *_CCP_);
 #endif

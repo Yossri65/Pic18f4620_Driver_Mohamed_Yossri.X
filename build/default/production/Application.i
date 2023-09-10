@@ -136,7 +136,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 8 "Application.c" 2
+# 7 "Application.c" 2
+
 
 # 1 "./Application.h" 1
 # 13 "./Application.h"
@@ -4358,7 +4359,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+
 # 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
 # 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4512,7 +4514,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4575,7 +4578,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4588,9 +4592,10 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+
 # 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../Device_config.h" 1
-# 15 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 14 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
 # 31 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h"
 typedef enum
 {
@@ -4660,7 +4665,8 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 13 "./ECU_Layer/LED/ecu_Led.h" 2
+# 12 "./ECU_Layer/LED/ecu_Led.h" 2
+
 
 
 
@@ -4687,7 +4693,8 @@ Std_ReturnType Led_Turn_On(const Led_t *Led);
 Std_ReturnType Led_Turn_Off(const Led_t *Led);
 # 69 "./ECU_Layer/LED/ecu_Led.h"
 Std_ReturnType Led_Toggle(const Led_t *Led);
-# 14 "./ECU_Layer/ecu_intialize.h" 2
+# 13 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/Button/ecu_button.h" 1
 # 18 "./ECU_Layer/Button/ecu_button.h"
 typedef enum
@@ -4714,7 +4721,8 @@ typedef struct
 Std_ReturnType Button_Initialize(const button_config_t *_button_);
 
 Std_ReturnType Button_Read_Status(const button_config_t *_button_ ,button_status_t *btn_status);
-# 15 "./ECU_Layer/ecu_intialize.h" 2
+# 14 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/Relay/ecu_relay.h" 1
 # 18 "./ECU_Layer/Relay/ecu_relay.h"
 typedef enum
@@ -4735,7 +4743,8 @@ Std_ReturnType Relay_Intialize( const Relay_t *_relay_);
 Std_ReturnType Relay_Turn_On( const Relay_t *_relay_);
 # 57 "./ECU_Layer/Relay/ecu_relay.h"
 Std_ReturnType Relay_Turn_Off( const Relay_t *_relay_);
-# 16 "./ECU_Layer/ecu_intialize.h" 2
+# 15 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/dc_motor/ecu_dc_motor.h" 1
 # 18 "./ECU_Layer/dc_motor/ecu_dc_motor.h"
 typedef enum
@@ -4756,7 +4765,8 @@ Std_ReturnType Dc_Motor_Turn_Right(const Dc_Motor_t *_dc_motor);
 Std_ReturnType Dc_Motor_Turn_Left(const Dc_Motor_t *_dc_motor);
 # 68 "./ECU_Layer/dc_motor/ecu_dc_motor.h"
 Std_ReturnType Dc_Motor_Stop(const Dc_Motor_t *_dc_motor);
-# 17 "./ECU_Layer/ecu_intialize.h" 2
+# 16 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/seven_segment/ecu_seven_segment.h" 1
 # 23 "./ECU_Layer/seven_segment/ecu_seven_segment.h"
 typedef enum
@@ -4774,7 +4784,8 @@ typedef struct
 Std_ReturnType Segment_Intialize(const Segment_t *segment);
 # 52 "./ECU_Layer/seven_segment/ecu_seven_segment.h"
 Std_ReturnType Segment_Write_Number(const Segment_t *segment ,uint8 number);
-# 18 "./ECU_Layer/ecu_intialize.h" 2
+# 17 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/Key_Pad/ecu_key_pad.h" 1
 # 19 "./ECU_Layer/Key_Pad/ecu_key_pad.h"
 typedef struct
@@ -4787,7 +4798,8 @@ typedef struct
 Std_ReturnType Key_Pad_Intialize(const Key_Pad_t *_key_pad);
 
 Std_ReturnType Key_Pad_Get_Value(const Key_Pad_t *_key_pad ,uint8 *value);
-# 19 "./ECU_Layer/ecu_intialize.h" 2
+# 18 "./ECU_Layer/ecu_intialize.h" 2
+
 # 1 "./ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 1
 # 14 "./ECU_Layer/Ch_LCD/ecu_ch_lcd.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
@@ -4847,7 +4859,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "./ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 2
+# 14 "./ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 2
 # 64 "./ECU_Layer/Ch_LCD/ecu_ch_lcd.h"
 typedef struct
 {
@@ -4881,6 +4893,191 @@ Std_ReturnType lcd_send_ATpos_string_data(const Ch_LCD *_LCD_ ,uint8 row ,uint8 
 
 Std_ReturnType lcd_send_custom_char(const Ch_LCD *_LCD_ ,uint8 row ,uint8 coulmns ,
                                          const uint8 _char[] ,uint8 mem_pos);
+# 19 "./ECU_Layer/ecu_intialize.h" 2
+
+# 1 "./ECU_Layer/Servo_Motor/servo_motor.h" 1
+# 15 "./ECU_Layer/Servo_Motor/servo_motor.h"
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h" 1
+# 14 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h"
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 1
+# 12 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h"
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 1
+# 12 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 12 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 2
+# 43 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
+typedef void (*interruptHandler) (void);
+
+typedef enum
+{
+    High_Priority = 0 ,
+    Low_Priority
+}Interrupt_Priority;
+# 12 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 2
+# 14 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 25 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h"
+typedef enum
+{
+    TIMER2_POSTSCALER_DIV_BY_1 = 0,
+    TIMER2_POSTSCALER_DIV_BY_2 ,
+    TIMER2_POSTSCALER_DIV_BY_3 ,
+    TIMER2_POSTSCALER_DIV_BY_4 ,
+    TIMER2_POSTSCALER_DIV_BY_5 ,
+    TIMER2_POSTSCALER_DIV_BY_6 ,
+    TIMER2_POSTSCALER_DIV_BY_7 ,
+    TIMER2_POSTSCALER_DIV_BY_8 ,
+    TIMER2_POSTSCALER_DIV_BY_9 ,
+    TIMER2_POSTSCALER_DIV_BY_10 ,
+    TIMER2_POSTSCALER_DIV_BY_11 ,
+    TIMER2_POSTSCALER_DIV_BY_12 ,
+    TIMER2_POSTSCALER_DIV_BY_13 ,
+    TIMER2_POSTSCALER_DIV_BY_14,
+    TIMER2_POSTSCALER_DIV_BY_15 ,
+    TIMER2_POSTSCALER_DIV_BY_16 ,
+}Timer2_Postscaler_Select_t;
+
+
+typedef enum
+{
+    TIMER2_PRESCALER_DIV_BY_1 = 0,
+    TIMER2_PRESCALER_DIV_BY_4 = 1,
+    TIMER2_PRESCALER_DIV_BY_16 = 2
+}Timer2_Prescaler_Select_t;
+
+typedef struct
+{
+
+
+
+
+
+
+    uint8 TIMER2_PRE_LOAD_VALUE;
+    Timer2_Postscaler_Select_t Postscaler_Select ;
+    Timer2_Prescaler_Select_t Prescaler_Select;
+}Timer2_conf_t;
+
+Std_ReturnType Timer2_Intialization(const Timer2_conf_t *timer2_);
+
+Std_ReturnType Timer2_DeIntialization(const Timer2_conf_t *timer2_);
+
+Std_ReturnType Timer2_Write_Value(const Timer2_conf_t *timer2_ ,uint8 value);
+
+Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value);
+# 15 "./ECU_Layer/Servo_Motor/servo_motor.h" 2
+
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h" 1
+# 16 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+# 1 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/ccp_cfg.h" 1
+# 16 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h" 2
+# 43 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+typedef enum
+{
+    CCP_POSTSCALER_DIV_BY_1 = 1,
+    CCP_POSTSCALER_DIV_BY_2 ,
+    CCP_POSTSCALER_DIV_BY_3 ,
+    CCP_POSTSCALER_DIV_BY_4 ,
+    CCP_POSTSCALER_DIV_BY_5 ,
+    CCP_POSTSCALER_DIV_BY_6 ,
+    CCP_POSTSCALER_DIV_BY_7 ,
+    CCP_POSTSCALER_DIV_BY_8 ,
+    CCP_POSTSCALER_DIV_BY_9 ,
+    CCP_POSTSCALER_DIV_BY_10 ,
+    CCP_POSTSCALER_DIV_BY_11 ,
+    CCP_POSTSCALER_DIV_BY_12 ,
+    CCP_POSTSCALER_DIV_BY_13 ,
+    CCP_POSTSCALER_DIV_BY_14,
+    CCP_POSTSCALER_DIV_BY_15 ,
+    CCP_POSTSCALER_DIV_BY_16 ,
+}CCP_Timer2_Postscaler_Select_t;
+
+
+typedef enum
+{
+    CCP_PRESCALER_DIV_BY_1 = 1,
+    CCP_PRESCALER_DIV_BY_4 = 4,
+    CCP_PRESCALER_DIV_BY_16 = 16
+}CCP_Timer2_Prescaler_Select_t;
+
+typedef enum
+{
+    CCP1_SELECT= 0,
+    CCP2_SELECT
+}CCP_SELECTION_T;
+
+typedef union
+{
+    struct
+    {
+        uint8 ccpr_low;
+        uint8 ccpr_high;
+    };
+    struct
+    {
+        uint16 ccpr16bit;
+    };
+}CCP_Priod_REG_t;
+typedef enum
+{
+    CCP_Capture_Mode_ =0,
+    CCP_Compare_Mode_,
+    CCP_PWM_Mode_Select
+}Mode_Selection_t;
+
+typedef enum
+{
+    CCP1_CCP2_Timer3 = 0 ,
+    CCP1_Timer1_CCP2_Timer2,
+    CCP1_CCP2_Timer1
+}CCP_Capture_Timer_Select;
+
+typedef struct
+{
+    CCP_SELECTION_T CCP_Select;
+    Mode_Selection_t CCP_Mode;
+    uint8 ccp_mode_varient;
+    Pin_Config_t CCP_pin;
+    CCP_Capture_Timer_Select Capture_Timer;
+
+    uint32 PWM_Frequncy;
+    CCP_Timer2_Postscaler_Select_t Postscaler_Select ;
+    CCP_Timer2_Prescaler_Select_t Prescaler_Select;
+
+
+    interruptHandler CCP1_IntterruptHandeler ;
+
+
+
+
+    interruptHandler CCP2_IntterruptHandeler ;
+
+
+
+
+
+}CCP_config_t;
+
+
+Std_ReturnType CCP_intialize(const CCP_config_t *_CCP_);
+Std_ReturnType CCP_Deintialize(const CCP_config_t *_CCP_);
+# 144 "./ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const float _duty);
+    Std_ReturnType CCP_PWM_Start(const CCP_config_t *_CCP_);
+    Std_ReturnType CCP_PWM_Stop(const CCP_config_t *_CCP_);
+# 16 "./ECU_Layer/Servo_Motor/servo_motor.h" 2
+
+
+
+
+
+
+
+typedef struct {
+    CCP_SELECTION_T ccp_selection;
+}servo_cfg;
+
+Std_ReturnType servo_motor_intialize(const servo_cfg *servo);
+Std_ReturnType servo_motor_set_angle(const servo_cfg *servo , sint8 angle);
 # 20 "./ECU_Layer/ecu_intialize.h" 2
 
 
@@ -4889,23 +5086,11 @@ Std_ReturnType lcd_send_custom_char(const Ch_LCD *_LCD_ ,uint8 row ,uint8 coulmn
 
 
 
-Std_ReturnType ecu_intialize();
-# 14 "./Application.h" 2
-# 1 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h" 1
-# 12 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h"
-# 1 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h" 1
-# 12 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h"
-# 1 "./MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 13 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
-# 43 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h"
-typedef void (*interruptHandler) (void);
 
-typedef enum
-{
-    High_Priority = 0 ,
-    Low_Priority
-}Interrupt_Priority;
-# 13 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h" 2
+Std_ReturnType ecu_intialize();
+# 13 "./Application.h" 2
+
+# 1 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h" 1
 # 76 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h"
 typedef enum
 {
@@ -4943,18 +5128,19 @@ Std_ReturnType EXT_INTX_DE_Intialize(const EXT_INTX_t *int_obj);
 
 Std_ReturnType EXT_RBX_Intialize(const EXT_RBX_t *int_obj);
 Std_ReturnType EXT_RBX_DE_Intialize(const EXT_RBX_t *int_obj);
-# 15 "./Application.h" 2
-# 1 "./MCAL_Layer/Interrupt/mcal_internal_interrupt.h" 1
-# 16 "./Application.h" 2
+# 14 "./Application.h" 2
+
+
 # 1 "./MCAL_Layer/EEPROM/mcal_eeprom.h" 1
 # 37 "./MCAL_Layer/EEPROM/mcal_eeprom.h"
 Std_ReturnType EEPROM_Data_WriteByte(uint16 bAdd ,uint8 bData);
 Std_ReturnType EEPROM_Data_ReadByte(uint16 bAdd ,uint8 *bData);
-# 17 "./Application.h" 2
+# 16 "./Application.h" 2
+
 # 1 "./MCAL_Layer/MCAL_ADC/mcal_adc.h" 1
 # 12 "./MCAL_Layer/MCAL_ADC/mcal_adc.h"
 # 1 "./MCAL_Layer/MCAL_ADC/mcal_adc_cfg.h" 1
-# 13 "./MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
+# 12 "./MCAL_Layer/MCAL_ADC/mcal_adc.h" 2
 # 70 "./MCAL_Layer/MCAL_ADC/mcal_adc.h"
 typedef enum
 {
@@ -5027,7 +5213,8 @@ Std_ReturnType ADC_Get_Conversion_Result(const ADC_Conf_t *adc_ ,uint16 *convers
 Std_ReturnType ADC_Get_Conversion_Blocking_Mode(const ADC_Conf_t *adc_ ,uint16 *conversion_Result
                                   ,ADC_Channel_Selection_t channel);
 Std_ReturnType ADC_Start_Conversion_Interrupt_Mode(const ADC_Conf_t *adc_,ADC_Channel_Selection_t channel);
-# 18 "./Application.h" 2
+# 17 "./Application.h" 2
+
 
 # 1 "./MCAL_Layer/Timer0/mcal_timer0.h" 1
 # 47 "./MCAL_Layer/Timer0/mcal_timer0.h"
@@ -5054,7 +5241,7 @@ typedef struct
     Timer0_Prescaler_Select_t Prescaler_Select ;
     uint16 TIMER0_PRE_LOAD_VALUE;
     uint8 TIMER0_PRESCALER_STATUS:1 ;
-    uint8 Timer0_Source_Edge:1;
+    uint8 Timer0_counter_mode_Source_Edge:1;
     uint8 Timer0_Mode:1;
     uint8 Timer0_SELECT_BIT_Mode:1;
     uint8 Timer0_Resreved: 4;
@@ -5067,7 +5254,8 @@ Std_ReturnType Timer0_DeIntialization(const Timer0_conf_t *timer0_);
 Std_ReturnType Timer0_Write_Value(const Timer0_conf_t *timer0_ ,uint16 value);
 
 Std_ReturnType Timer0_Read_Value(const Timer0_conf_t *timer0_ ,uint16 *value);
-# 20 "./Application.h" 2
+# 19 "./Application.h" 2
+
 # 1 "./MCAL_Layer/Timer1/mcal_timer1.h" 1
 # 57 "./MCAL_Layer/Timer1/mcal_timer1.h"
 typedef enum
@@ -5102,58 +5290,9 @@ Std_ReturnType Timer1_DeIntialization(const Timer1_conf_t *timer1_);
 Std_ReturnType Timer1_Write_Value(const Timer1_conf_t *timer1_ ,uint16 value);
 
 Std_ReturnType Timer1_Read_Value(const Timer1_conf_t *timer1_ ,uint16 *value);
-# 21 "./Application.h" 2
-# 1 "./MCAL_Layer/Timer2/mcal_timer2.h" 1
-# 25 "./MCAL_Layer/Timer2/mcal_timer2.h"
-typedef enum
-{
-    TIMER2_POSTSCALER_DIV_BY_1 = 0,
-    TIMER2_POSTSCALER_DIV_BY_2 ,
-    TIMER2_POSTSCALER_DIV_BY_3 ,
-    TIMER2_POSTSCALER_DIV_BY_4 ,
-    TIMER2_POSTSCALER_DIV_BY_5 ,
-    TIMER2_POSTSCALER_DIV_BY_6 ,
-    TIMER2_POSTSCALER_DIV_BY_7 ,
-    TIMER2_POSTSCALER_DIV_BY_8 ,
-    TIMER2_POSTSCALER_DIV_BY_9 ,
-    TIMER2_POSTSCALER_DIV_BY_10 ,
-    TIMER2_POSTSCALER_DIV_BY_11 ,
-    TIMER2_POSTSCALER_DIV_BY_12 ,
-    TIMER2_POSTSCALER_DIV_BY_13 ,
-    TIMER2_POSTSCALER_DIV_BY_14,
-    TIMER2_POSTSCALER_DIV_BY_15 ,
-    TIMER2_POSTSCALER_DIV_BY_16 ,
-}Timer2_Postscaler_Select_t;
+# 20 "./Application.h" 2
 
 
-typedef enum
-{
-    TIMER2_PRESCALER_DIV_BY_1 = 0,
-    TIMER2_PRESCALER_DIV_BY_4 ,
-    TIMER2_PRESCALER_DIV_BY_16
-}Timer2_Prescaler_Select_t;
-
-typedef struct
-{
-
-    interruptHandler TIMER2_IntterruptHandeler;
-
-
-
-
-    uint8 TIMER2_PRE_LOAD_VALUE;
-    Timer2_Postscaler_Select_t Postscaler_Select ;
-    Timer2_Prescaler_Select_t Prescaler_Select;
-}Timer2_conf_t;
-
-Std_ReturnType Timer2_Intialization(const Timer2_conf_t *timer2_);
-
-Std_ReturnType Timer2_DeIntialization(const Timer2_conf_t *timer2_);
-
-Std_ReturnType Timer2_Write_Value(const Timer2_conf_t *timer2_ ,uint8 value);
-
-Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value);
-# 22 "./Application.h" 2
 # 1 "./MCAL_Layer/Timer3/mcal_timer3.h" 1
 # 52 "./MCAL_Layer/Timer3/mcal_timer3.h"
 typedef struct{
@@ -5194,106 +5333,9 @@ Std_ReturnType timer3_Deinit(const timer3_t *_timer);
 Std_ReturnType timer3_write_value(const timer3_t *_timer, uint16 _value);
 # 96 "./MCAL_Layer/Timer3/mcal_timer3.h"
 Std_ReturnType timer3_read_value(const timer3_t *_timer, uint16 *_value);
-# 23 "./Application.h" 2
-# 1 "./MCAL_Layer/CCP1/hal_ccp.h" 1
-# 16 "./MCAL_Layer/CCP1/hal_ccp.h"
-# 1 "./MCAL_Layer/CCP1/ccp_cfg.h" 1
-# 17 "./MCAL_Layer/CCP1/hal_ccp.h" 2
-# 43 "./MCAL_Layer/CCP1/hal_ccp.h"
-typedef enum
-{
-    CCP_POSTSCALER_DIV_BY_1 = 0,
-    CCP_POSTSCALER_DIV_BY_2 ,
-    CCP_POSTSCALER_DIV_BY_3 ,
-    CCP_POSTSCALER_DIV_BY_4 ,
-    CCP_POSTSCALER_DIV_BY_5 ,
-    CCP_POSTSCALER_DIV_BY_6 ,
-    CCP_POSTSCALER_DIV_BY_7 ,
-    CCP_POSTSCALER_DIV_BY_8 ,
-    CCP_POSTSCALER_DIV_BY_9 ,
-    CCP_POSTSCALER_DIV_BY_10 ,
-    CCP_POSTSCALER_DIV_BY_11 ,
-    CCP_POSTSCALER_DIV_BY_12 ,
-    CCP_POSTSCALER_DIV_BY_13 ,
-    CCP_POSTSCALER_DIV_BY_14,
-    CCP_POSTSCALER_DIV_BY_15 ,
-    CCP_POSTSCALER_DIV_BY_16 ,
-}CCP_Timer2_Postscaler_Select_t;
+# 22 "./Application.h" 2
 
 
-typedef enum
-{
-    CCP_PRESCALER_DIV_BY_1 = 0,
-    CCP_PRESCALER_DIV_BY_4 ,
-    CCP_PRESCALER_DIV_BY_16
-}CCP_Timer2_Prescaler_Select_t;
-
-typedef enum
-{
-    CCP1_SELECT= 0,
-    CCP2_SELECT
-}CCP_SELECTION_T;
-
-typedef union
-{
-    struct
-    {
-        uint8 ccpr_low;
-        uint8 ccpr_high;
-    };
-    struct
-    {
-        uint16 ccpr16bit;
-    };
-}CCP_Priod_REG_t;
-typedef enum
-{
-    CCP_Capture_Mode_ =0,
-    CCP_Compare_Mode_,
-    CCP_PWM_Mode_Select
-}Mode_Selection_t;
-
-typedef enum
-{
-    CCP1_CCP2_Timer3 = 0 ,
-    CCP1_Timer1_CCP2_Timer2,
-    CCP1_CCP2_Timer1
-}CCP_Capture_Timer_Select;
-
-typedef struct
-{
-    CCP_SELECTION_T CCP_Select;
-    Mode_Selection_t CCP_Mode;
-    uint8 ccp_mode_varient;
-    Pin_Config_t CCP_pin;
-    CCP_Capture_Timer_Select Capture_Timer;
-
-
-
-
-
-
-    interruptHandler CCP1_IntterruptHandeler ;
-
-
-
-
-    interruptHandler CCP2_IntterruptHandeler ;
-
-
-
-
-
-}CCP_config_t;
-
-
-Std_ReturnType CCP_intialize(const CCP_config_t *_CCP_);
-Std_ReturnType CCP_Deintialize(const CCP_config_t *_CCP_);
-
-
-    Std_ReturnType CCP_Capture_Is_Ready(const CCP_config_t *_CCP_ ,uint8 *Capture_Status);
-    Std_ReturnType CCP_Capture_Read_Value(const CCP_config_t *_CCP_, uint16 *Capture_Value);
-# 24 "./Application.h" 2
 # 1 "./MCAL_Layer/ECCP/hal_eccp.h" 1
 # 77 "./MCAL_Layer/ECCP/hal_eccp.h"
 typedef enum
@@ -5341,11 +5383,12 @@ Std_ReturnType ECCP_Deintialize(const ECCP_CONFIG_t *_ECCP_);
 Std_ReturnType ECCP_PWM_Set_Duty(const ECCP_CONFIG_t *_ECCP_ ,const uint8 _duty);
 Std_ReturnType ECCP_PWM_Start(const ECCP_CONFIG_t *_ECCP_);
 Std_ReturnType ECCP_PWM_Stop(const ECCP_CONFIG_t *_ECCP_);
-# 25 "./Application.h" 2
+# 24 "./Application.h" 2
+
 # 1 "./MCAL_Layer/USART/hal_usart.h" 1
 # 17 "./MCAL_Layer/USART/hal_usart.h"
 # 1 "./MCAL_Layer/USART/hal_usart_cfg.h" 1
-# 18 "./MCAL_Layer/USART/hal_usart.h" 2
+# 17 "./MCAL_Layer/USART/hal_usart.h" 2
 # 70 "./MCAL_Layer/USART/hal_usart.h"
 typedef enum
 {
@@ -5412,7 +5455,8 @@ Std_ReturnType EUSART_ASYNC_WriteStringBlocking(uint8 *_data ,uint16 str_len);
 
 Std_ReturnType EUSART_ASYNC_WriteByteNoBlocking(uint8 _data);
 Std_ReturnType EUSART_ASYNC_WriteStringNoBlocking(uint8 *_data ,uint16 str_len);
-# 26 "./Application.h" 2
+# 25 "./Application.h" 2
+
 # 1 "./MCAL_Layer/SPI/hal_spi.h" 1
 # 53 "./MCAL_Layer/SPI/hal_spi.h"
 typedef struct{
@@ -5441,7 +5485,8 @@ Std_ReturnType SPI_SendString(uint8 *_data ,uint16 str_len);
 Std_ReturnType SPI_Read_Byte(const SPI_Config *_SPI_, uint8 *_data);
 Std_ReturnType SPI_Send_Byte_NonBlocking(const SPI_Config *_SPI_, const uint8 _data);
 Std_ReturnType SPI_Read_Byte_NonBlocking(const SPI_Config *_SPI_, uint8 *_data);
-# 27 "./Application.h" 2
+# 26 "./Application.h" 2
+
 # 1 "./MCAL_Layer/I2C/hal_i2c.h" 1
 # 77 "./MCAL_Layer/I2C/hal_i2c.h"
 typedef struct{
@@ -5482,19 +5527,23 @@ Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ac
 
 Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
 Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
-# 28 "./Application.h" 2
+# 27 "./Application.h" 2
+
 
 
 
 
 extern Ch_LCD lcd1;
 extern Key_Pad_t key_pad1;
-# 10 "Application.c" 2
+# 9 "Application.c" 2
+
 Std_ReturnType ret = (Std_ReturnType)0x00;
 void intialization (void);
 
 int main(void) {
     intialization();
+
+
     while(1)
     {
 
@@ -5504,5 +5553,5 @@ int main(void) {
 
 void intialization (void)
 {
-    ecu_intialize( );
+
 }

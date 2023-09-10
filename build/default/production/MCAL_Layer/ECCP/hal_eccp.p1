@@ -601,11 +601,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL_Layer/ECCP/hal_eccp.c: 29:             ECCP_Interrupt_Config(_ECCP_);
 [e ( _ECCP_Interrupt_Config (1 __ECCP_ ]
 "30
-[; ;MCAL_Layer/ECCP/hal_eccp.c: 30:             PR2 = (uint8)((4000000UL / ((_ECCP_->PWM_Frequncy) * 4.0 * (_ECCP_->Postscaler_Select) * (_ECCP_->Prescaler_Select))) - 1.0);
-[e = _PR2 -> - / -> -> 4000000 `ul `d * * * -> . *U __ECCP_ 7 `d .4.0 -> -> . *U __ECCP_ 8 `i `d -> -> . *U __ECCP_ 9 `i `d .1.0 `uc ]
+[; ;MCAL_Layer/ECCP/hal_eccp.c: 30:             PR2 = (uint8)((500000UL / ((_ECCP_->PWM_Frequncy) * 4.0 * (_ECCP_->Postscaler_Select) * (_ECCP_->Prescaler_Select))) - 1.0);
+[e = _PR2 -> - / -> -> 500000 `ul `d * * * -> . *U __ECCP_ 7 `d .4.0 -> -> . *U __ECCP_ 8 `i `d -> -> . *U __ECCP_ 9 `i `d .1.0 `uc ]
 "31
-[; ;MCAL_Layer/ECCP/hal_eccp.c: 31:             PWM1CONbits.PDC = _ECCP_->delay /(4.0 *4000000UL) ;
-[e = . . _PWM1CONbits 0 0 -> / -> . *U __ECCP_ 2 `d * .4.0 -> -> 4000000 `ul `d `uc ]
+[; ;MCAL_Layer/ECCP/hal_eccp.c: 31:             PWM1CONbits.PDC = _ECCP_->delay /(4.0 *500000UL) ;
+[e = . . _PWM1CONbits 0 0 -> / -> . *U __ECCP_ 2 `d * .4.0 -> -> 500000 `ul `d `uc ]
 "32
 [; ;MCAL_Layer/ECCP/hal_eccp.c: 32:             ECCP1ASbits.ECCPASE = 0;
 [e = . . _ECCP1ASbits 0 3 -> -> 0 `i `uc ]

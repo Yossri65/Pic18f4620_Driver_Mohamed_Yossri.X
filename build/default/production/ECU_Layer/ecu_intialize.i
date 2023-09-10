@@ -4232,7 +4232,8 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
 # 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
@@ -4399,7 +4400,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4462,7 +4464,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 14 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+
 
 
 typedef unsigned char uint8;
@@ -4475,9 +4478,10 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef unsigned Std_ReturnType;
-# 14 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../Device_config.h" 1
-# 15 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
+# 14 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
 # 31 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h"
 typedef enum
 {
@@ -4547,7 +4551,8 @@ Std_ReturnType GPIO_Port_Write_Logic(Port_Index_t _Port_Index_ ,Logic_t Logic);
 Std_ReturnType GPIO_Port_Read_Logic(Port_Index_t _Port_Index_ ,Logic_t *Logic);
 
 Std_ReturnType GPIO_Port_Toggle_Logic(Port_Index_t _Port_Index_);
-# 13 "ECU_Layer/LED/ecu_Led.h" 2
+# 12 "ECU_Layer/LED/ecu_Led.h" 2
+
 
 
 
@@ -4574,7 +4579,8 @@ Std_ReturnType Led_Turn_On(const Led_t *Led);
 Std_ReturnType Led_Turn_Off(const Led_t *Led);
 # 69 "ECU_Layer/LED/ecu_Led.h"
 Std_ReturnType Led_Toggle(const Led_t *Led);
-# 14 "ECU_Layer/ecu_intialize.h" 2
+# 13 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/Button/ecu_button.h" 1
 # 18 "ECU_Layer/Button/ecu_button.h"
 typedef enum
@@ -4601,7 +4607,8 @@ typedef struct
 Std_ReturnType Button_Initialize(const button_config_t *_button_);
 
 Std_ReturnType Button_Read_Status(const button_config_t *_button_ ,button_status_t *btn_status);
-# 15 "ECU_Layer/ecu_intialize.h" 2
+# 14 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/Relay/ecu_relay.h" 1
 # 18 "ECU_Layer/Relay/ecu_relay.h"
 typedef enum
@@ -4622,7 +4629,8 @@ Std_ReturnType Relay_Intialize( const Relay_t *_relay_);
 Std_ReturnType Relay_Turn_On( const Relay_t *_relay_);
 # 57 "ECU_Layer/Relay/ecu_relay.h"
 Std_ReturnType Relay_Turn_Off( const Relay_t *_relay_);
-# 16 "ECU_Layer/ecu_intialize.h" 2
+# 15 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/dc_motor/ecu_dc_motor.h" 1
 # 18 "ECU_Layer/dc_motor/ecu_dc_motor.h"
 typedef enum
@@ -4643,7 +4651,8 @@ Std_ReturnType Dc_Motor_Turn_Right(const Dc_Motor_t *_dc_motor);
 Std_ReturnType Dc_Motor_Turn_Left(const Dc_Motor_t *_dc_motor);
 # 68 "ECU_Layer/dc_motor/ecu_dc_motor.h"
 Std_ReturnType Dc_Motor_Stop(const Dc_Motor_t *_dc_motor);
-# 17 "ECU_Layer/ecu_intialize.h" 2
+# 16 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/seven_segment/ecu_seven_segment.h" 1
 # 23 "ECU_Layer/seven_segment/ecu_seven_segment.h"
 typedef enum
@@ -4661,7 +4670,8 @@ typedef struct
 Std_ReturnType Segment_Intialize(const Segment_t *segment);
 # 52 "ECU_Layer/seven_segment/ecu_seven_segment.h"
 Std_ReturnType Segment_Write_Number(const Segment_t *segment ,uint8 number);
-# 18 "ECU_Layer/ecu_intialize.h" 2
+# 17 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/Key_Pad/ecu_key_pad.h" 1
 # 19 "ECU_Layer/Key_Pad/ecu_key_pad.h"
 typedef struct
@@ -4674,7 +4684,8 @@ typedef struct
 Std_ReturnType Key_Pad_Intialize(const Key_Pad_t *_key_pad);
 
 Std_ReturnType Key_Pad_Get_Value(const Key_Pad_t *_key_pad ,uint8 *value);
-# 19 "ECU_Layer/ecu_intialize.h" 2
+# 18 "ECU_Layer/ecu_intialize.h" 2
+
 # 1 "ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 1
 # 14 "ECU_Layer/Ch_LCD/ecu_ch_lcd.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
@@ -4734,7 +4745,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 2
+# 14 "ECU_Layer/Ch_LCD/ecu_ch_lcd.h" 2
 # 64 "ECU_Layer/Ch_LCD/ecu_ch_lcd.h"
 typedef struct
 {
@@ -4768,6 +4779,191 @@ Std_ReturnType lcd_send_ATpos_string_data(const Ch_LCD *_LCD_ ,uint8 row ,uint8 
 
 Std_ReturnType lcd_send_custom_char(const Ch_LCD *_LCD_ ,uint8 row ,uint8 coulmns ,
                                          const uint8 _char[] ,uint8 mem_pos);
+# 19 "ECU_Layer/ecu_intialize.h" 2
+
+# 1 "ECU_Layer/Servo_Motor/servo_motor.h" 1
+# 15 "ECU_Layer/Servo_Motor/servo_motor.h"
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h" 1
+# 14 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h"
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 1
+# 12 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h"
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 1
+# 12 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 12 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 2
+# 43 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h"
+typedef void (*interruptHandler) (void);
+
+typedef enum
+{
+    High_Priority = 0 ,
+    Low_Priority
+}Interrupt_Priority;
+# 12 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/../Interrupt/mcal_internal_interrupt.h" 2
+# 14 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h" 2
+# 25 "ECU_Layer/Servo_Motor/../../MCAL_Layer/Timer2/mcal_timer2.h"
+typedef enum
+{
+    TIMER2_POSTSCALER_DIV_BY_1 = 0,
+    TIMER2_POSTSCALER_DIV_BY_2 ,
+    TIMER2_POSTSCALER_DIV_BY_3 ,
+    TIMER2_POSTSCALER_DIV_BY_4 ,
+    TIMER2_POSTSCALER_DIV_BY_5 ,
+    TIMER2_POSTSCALER_DIV_BY_6 ,
+    TIMER2_POSTSCALER_DIV_BY_7 ,
+    TIMER2_POSTSCALER_DIV_BY_8 ,
+    TIMER2_POSTSCALER_DIV_BY_9 ,
+    TIMER2_POSTSCALER_DIV_BY_10 ,
+    TIMER2_POSTSCALER_DIV_BY_11 ,
+    TIMER2_POSTSCALER_DIV_BY_12 ,
+    TIMER2_POSTSCALER_DIV_BY_13 ,
+    TIMER2_POSTSCALER_DIV_BY_14,
+    TIMER2_POSTSCALER_DIV_BY_15 ,
+    TIMER2_POSTSCALER_DIV_BY_16 ,
+}Timer2_Postscaler_Select_t;
+
+
+typedef enum
+{
+    TIMER2_PRESCALER_DIV_BY_1 = 0,
+    TIMER2_PRESCALER_DIV_BY_4 = 1,
+    TIMER2_PRESCALER_DIV_BY_16 = 2
+}Timer2_Prescaler_Select_t;
+
+typedef struct
+{
+
+
+
+
+
+
+    uint8 TIMER2_PRE_LOAD_VALUE;
+    Timer2_Postscaler_Select_t Postscaler_Select ;
+    Timer2_Prescaler_Select_t Prescaler_Select;
+}Timer2_conf_t;
+
+Std_ReturnType Timer2_Intialization(const Timer2_conf_t *timer2_);
+
+Std_ReturnType Timer2_DeIntialization(const Timer2_conf_t *timer2_);
+
+Std_ReturnType Timer2_Write_Value(const Timer2_conf_t *timer2_ ,uint8 value);
+
+Std_ReturnType Timer2_Read_Value(const Timer2_conf_t *timer2_ ,uint8 *value);
+# 15 "ECU_Layer/Servo_Motor/servo_motor.h" 2
+
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h" 1
+# 16 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+# 1 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/ccp_cfg.h" 1
+# 16 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h" 2
+# 43 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+typedef enum
+{
+    CCP_POSTSCALER_DIV_BY_1 = 1,
+    CCP_POSTSCALER_DIV_BY_2 ,
+    CCP_POSTSCALER_DIV_BY_3 ,
+    CCP_POSTSCALER_DIV_BY_4 ,
+    CCP_POSTSCALER_DIV_BY_5 ,
+    CCP_POSTSCALER_DIV_BY_6 ,
+    CCP_POSTSCALER_DIV_BY_7 ,
+    CCP_POSTSCALER_DIV_BY_8 ,
+    CCP_POSTSCALER_DIV_BY_9 ,
+    CCP_POSTSCALER_DIV_BY_10 ,
+    CCP_POSTSCALER_DIV_BY_11 ,
+    CCP_POSTSCALER_DIV_BY_12 ,
+    CCP_POSTSCALER_DIV_BY_13 ,
+    CCP_POSTSCALER_DIV_BY_14,
+    CCP_POSTSCALER_DIV_BY_15 ,
+    CCP_POSTSCALER_DIV_BY_16 ,
+}CCP_Timer2_Postscaler_Select_t;
+
+
+typedef enum
+{
+    CCP_PRESCALER_DIV_BY_1 = 1,
+    CCP_PRESCALER_DIV_BY_4 = 4,
+    CCP_PRESCALER_DIV_BY_16 = 16
+}CCP_Timer2_Prescaler_Select_t;
+
+typedef enum
+{
+    CCP1_SELECT= 0,
+    CCP2_SELECT
+}CCP_SELECTION_T;
+
+typedef union
+{
+    struct
+    {
+        uint8 ccpr_low;
+        uint8 ccpr_high;
+    };
+    struct
+    {
+        uint16 ccpr16bit;
+    };
+}CCP_Priod_REG_t;
+typedef enum
+{
+    CCP_Capture_Mode_ =0,
+    CCP_Compare_Mode_,
+    CCP_PWM_Mode_Select
+}Mode_Selection_t;
+
+typedef enum
+{
+    CCP1_CCP2_Timer3 = 0 ,
+    CCP1_Timer1_CCP2_Timer2,
+    CCP1_CCP2_Timer1
+}CCP_Capture_Timer_Select;
+
+typedef struct
+{
+    CCP_SELECTION_T CCP_Select;
+    Mode_Selection_t CCP_Mode;
+    uint8 ccp_mode_varient;
+    Pin_Config_t CCP_pin;
+    CCP_Capture_Timer_Select Capture_Timer;
+
+    uint32 PWM_Frequncy;
+    CCP_Timer2_Postscaler_Select_t Postscaler_Select ;
+    CCP_Timer2_Prescaler_Select_t Prescaler_Select;
+
+
+    interruptHandler CCP1_IntterruptHandeler ;
+
+
+
+
+    interruptHandler CCP2_IntterruptHandeler ;
+
+
+
+
+
+}CCP_config_t;
+
+
+Std_ReturnType CCP_intialize(const CCP_config_t *_CCP_);
+Std_ReturnType CCP_Deintialize(const CCP_config_t *_CCP_);
+# 144 "ECU_Layer/Servo_Motor/../../MCAL_Layer/CCP1/hal_ccp.h"
+    Std_ReturnType CCP_PWM_Set_Duty(const CCP_config_t *_CCP_ ,const float _duty);
+    Std_ReturnType CCP_PWM_Start(const CCP_config_t *_CCP_);
+    Std_ReturnType CCP_PWM_Stop(const CCP_config_t *_CCP_);
+# 16 "ECU_Layer/Servo_Motor/servo_motor.h" 2
+
+
+
+
+
+
+
+typedef struct {
+    CCP_SELECTION_T ccp_selection;
+}servo_cfg;
+
+Std_ReturnType servo_motor_intialize(const servo_cfg *servo);
+Std_ReturnType servo_motor_set_angle(const servo_cfg *servo , sint8 angle);
 # 20 "ECU_Layer/ecu_intialize.h" 2
 
 
@@ -4776,8 +4972,10 @@ Std_ReturnType lcd_send_custom_char(const Ch_LCD *_LCD_ ,uint8 row ,uint8 coulmn
 
 
 
+
 Std_ReturnType ecu_intialize();
-# 9 "ECU_Layer/ecu_intialize.c" 2
+# 8 "ECU_Layer/ecu_intialize.c" 2
+
 
 
 Key_Pad_t key_pad1 =
@@ -4866,8 +5064,8 @@ Std_ReturnType ecu_intialize()
 {
     Std_ReturnType ret =(Std_ReturnType)0x00;
 
-    ret = lcd_intialize(&lcd1);
-    ret = Key_Pad_Intialize(&key_pad1);
+
+
 
     return ret;
 }

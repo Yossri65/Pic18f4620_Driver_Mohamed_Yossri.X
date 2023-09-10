@@ -19,8 +19,8 @@
 #define TIMER2_ENABLE()  (T2CONbits.TMR2ON = 1)
 #define TIMER2_DISABLE() (T2CONbits.TMR2ON = 0)
 
-#define Timer2_Postscaler_Select_(_post_scaler_) (T2CONbits.T2CKPS = _post_scaler_)
-#define Timer2_Prescaler_Select_(_pre_scaler_)   (T2CONbits.TOUTPS = _pre_scaler_)
+#define Timer2_Postscaler_Select_(_post_scaler_) (T2CONbits.TOUTPS = _post_scaler_)
+#define Timer2_Prescaler_Select_(_pre_scaler_)   (T2CONbits.T2CKPS = _pre_scaler_)
 /* ------------------------------------Data Type Declarations----------------------- */
 typedef enum
 {
@@ -46,8 +46,8 @@ typedef enum
 typedef enum
 {
     TIMER2_PRESCALER_DIV_BY_1 = 0,
-    TIMER2_PRESCALER_DIV_BY_4 ,
-    TIMER2_PRESCALER_DIV_BY_16 
+    TIMER2_PRESCALER_DIV_BY_4 = 1,
+    TIMER2_PRESCALER_DIV_BY_16 = 2 
 }Timer2_Prescaler_Select_t;
 
 typedef struct 

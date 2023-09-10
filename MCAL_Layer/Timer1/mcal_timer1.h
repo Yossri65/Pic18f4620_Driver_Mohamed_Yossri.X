@@ -19,7 +19,7 @@
 #define TIMER1_TIMER_MODE_   0
 
 #define TIMER1_SYNC_COUNTER_MODE_  0
-#define TIMER1_ASYNC_TIMER_MODE_   1
+#define TIMER1_ASYNC_COUNTER_MODE_   1
 
 #define TIMER1_PRESCALER_ENABLE_    0
 #define TIMER1_PRESCALER_DISABLE_   1
@@ -44,7 +44,7 @@
 #define TIMER1_TIMER_MODE()    (T1CONbits.TMR1CS = 0)
 
 #define TIMER1_SYNC_COUNTER_MODE()    (T1CONbits.T1SYNC = 0)
-#define TIMER1_ASYNC_TIMER_MODE()     (T1CONbits.T1SYNC = 1)
+#define TIMER1_ASYNC_COUNTER_MODE()     (T1CONbits.T1SYNC = 1)
 
 #define Timer1_Read_Clock_Status()     (T1CONbits.T1RUN)
 

@@ -7,10 +7,6 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MCAL_Layer/Device_config.c" 2
-# 1 "MCAL_Layer/Device_config.h" 1
-# 2 "MCAL_Layer/Device_config.c" 2
-
-
 
 
 
@@ -32,7 +28,7 @@
 
 
 #pragma config CCP2MX = PORTC
-#pragma config PBADEN = ON
+#pragma config PBADEN = OFF
 #pragma config LPT1OSC = OFF
 #pragma config MCLRE = ON
 
@@ -4539,5 +4535,5 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 68 "MCAL_Layer/Device_config.c" 2
+# 64 "MCAL_Layer/Device_config.c" 2
 

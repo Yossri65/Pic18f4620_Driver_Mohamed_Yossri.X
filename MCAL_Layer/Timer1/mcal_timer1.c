@@ -128,8 +128,8 @@ static void Timer1_Mode_Select(const Timer1_conf_t *timer1_)
         TIMER1_COUNTER_MODE();
         if (TIMER1_SYNC_COUNTER_MODE_ == timer1_->Timer1_Counter_Sync_Mode) {
             TIMER1_SYNC_COUNTER_MODE();
-        } else if (TIMER1_ASYNC_TIMER_MODE_ == timer1_->Timer1_Counter_Sync_Mode) {
-            TIMER1_ASYNC_TIMER_MODE();
+        } else if (TIMER1_ASYNC_COUNTER_MODE_ == timer1_->Timer1_Counter_Sync_Mode) {
+            TIMER1_ASYNC_COUNTER_MODE();
         } else {
             /*Nothing*/
         }
